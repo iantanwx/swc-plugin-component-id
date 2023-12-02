@@ -1,0 +1,16 @@
+[package]
+name = "swc_plugin_react_component_id"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+lto = true
+
+[dependencies]
+react_component_id = { path = "./transform" }
+serde = "1"
+swc_core = { version = "0.86.*", features = ["ecma_plugin_transform"] }
