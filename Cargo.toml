@@ -11,6 +11,21 @@ crate-type = ["cdylib"]
 lto = true
 
 [dependencies]
-react_component_id = { path = "./transform" }
-serde = "1"
-swc_core = { version = "0.86.*", features = ["ecma_plugin_transform"] }
+swc = "0.269.80"
+swc_common = "0.33.10"
+swc_ecma_ast = "0.110.12"
+swc_ecma_transforms = "0.226.66"
+swc_ecma_visit = "0.96.12"
+serde = { version = "1.0.175", features = ["derive"] }
+serde-wasm-bindgen = { version = "0.4.5" }
+getrandom = { version = "0.2.10", features = ["js"] }
+swc_core = { version = "0.86.87", features = [
+  "ecma_ast_serde",
+  "ecma_codegen",
+  "binding_macro_wasm",
+  "ecma_transforms",
+  "ecma_visit",
+] }
+wasm-bindgen = { version = "0.2.82", features = ["enable-interning"] }
+anyhow = "1.0.66"
+swc_ecma_parser = "0.141.30"
